@@ -1,0 +1,13 @@
+Group hierarchy,Region,Service,Upfront,Monthly,First 12 months total,Currency,Configuration summary
+My Estimate,US East (N. Virginia),Amazon EC2,0,7110.34,85324.08,USD,"Operating system (Linux), Quantity (12), Storage for each EC2 instance (Provisioned IOPS SSD (io1)), Storage amount (1000 GB), Provisioning IOPS (4850), Instance type (t3.2xlarge)"
+My Estimate,US East (N. Virginia),Elastic Load Balancing,0,616.85,7402.20,USD,Number of Application Load Balancers (2)
+My Estimate,US East (N. Virginia),S3 Standard,0,94.21,1130.52,USD,S3 Standard storage (4 TB per month)
+My Estimate,US East (N. Virginia),Amazon Virtual Private Cloud (VPC),0,434.34,5212.08,USD,Number of NAT Gateways (2)
+My Estimate,US East (N. Virginia),Amazon RDS for MySQL,0,5861.755999999999,70341.07,USD,"Quantity (1), Storage for each RDS instance (Provisioned IOPS SSD (io1)), Storage amount (4 TB), Provisioning IOPS (5000), Instance type (db.m5.12xlarge)"
+My Estimate,US East (N. Virginia),Amazon RDS for MySQL,0,5861.755999999999,70341.07,USD,"Quantity (1), Storage for each RDS instance (Provisioned IOPS SSD (io1)), Storage amount (4 TB), Provisioning IOPS (5000), Instance type (db.m5.12xlarge)"
+
+
+
+"AWS Pricing Calculator provides only an estimate of your AWS fees and doesn't include any taxes that might apply. Your actual fees depend on a variety of factors, including your actual usage of AWS services."
+
+Rationale: To increase redundancy and performance of both RDS MySQL instances, enable Multi-AZ and use Provisioned IOPS SSD (5000 IOPS) respectively. Also, add another NAT Gateway to Public Subnet 2 in Availability Zone 2. Finally, we can increase the performance of the EC2 instances by using Provisioned IOPS (4850 IOPS) 

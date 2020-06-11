@@ -1,0 +1,13 @@
+Group hierarchy,Region,Service,Upfront,Monthly,First 12 months total,Currency,Configuration summary
+My Estimate,US East (N. Virginia),Amazon EC2,0,2113.67,25364.04,USD,"Operating system (Linux), Quantity (12), Storage for each EC2 instance (General Purpose SSD (gp2)), Storage amount (1000 GB), Instance type (t3.xlarge)"
+My Estimate,US East (N. Virginia),Elastic Load Balancing,0,616.85,7402.20,USD,Number of Application Load Balancers (2)
+My Estimate,US East (N. Virginia),S3 Standard,0,94.21,1130.52,USD,S3 Standard storage (4 TB per month)
+My Estimate,US East (N. Virginia),Amazon Virtual Private Cloud (VPC),0,217.17,2606.04,USD,Number of NAT Gateways (1)
+My Estimate,US East (N. Virginia),Amazon RDS for MySQL,0,992.906,11914.87,USD,"Quantity (1), Storage for each RDS instance (General Purpose SSD (gp2)), Storage amount (3 TB), Instance type (db.m5.4xlarge)"
+My Estimate,US East (N. Virginia),Amazon RDS for MySQL,0,2389.918,28679.02,USD,"Quantity (1), Storage for each RDS instance (General Purpose SSD (gp2)), Storage amount (4 TB), Instance type (db.m5.12xlarge)"
+
+
+
+"AWS Pricing Calculator provides only an estimate of your AWS fees and doesn't include any taxes that might apply. Your actual fees depend on a variety of factors, including your actual usage of AWS services."
+
+Rationale: Since the RDS databases cost the most money, I started cutting down costs in that area by using smaller instance types and storage for the Read Replica (i.e., going from db.m5.12xlarge instance to a db.m5.4xlarge instance and from 4TB to 3TB in storage respectively), since we're unlikely to need those resources for an app of this size anyway and we can rely on built-in Auto Scaling to monitor actual storage consumption and scale capacity up and down as needed. EC2 instances are the next biggest costs, so I picked cheaper instance type options that run on General Purpose SSD. Again we can rely on AWS Auto Scaling to spin up new instances as needed.
